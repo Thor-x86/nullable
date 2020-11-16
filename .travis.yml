@@ -10,11 +10,12 @@ dist: focal
 services:
   - docker
 
+before_script:
+  - docker-compose up -d --build
+  - sleep 1m # Making sure all databases ready
+
 script:
-  - docker-compose up
-  - go get gorm.io/gorm
-  - go get gorm.io/driver/mysql
-  - go get gorm.io/driver/postgres
-  - go get gorm.io/driver/sqlite
-  - go get gorm.io/driver/sqlserver
-  - test_all.sh
+  - ./test_all.sh
+
+after_script:
+  - docker-compose down
