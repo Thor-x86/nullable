@@ -1,6 +1,6 @@
 # Nullable SQL Data Types for Golang (GO)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Thor-x86/nullable/blob/master/LICENSE)
 [![Open Issues](https://img.shields.io/github/issues-raw/Thor-x86/nullable)](https://github.com/Thor-x86/nullable/issues)
 [![Open Pull Request](https://img.shields.io/github/issues-pr-raw/Thor-x86/nullable)](https://github.com/Thor-x86/nullable/pulls)
 [![Unit Test Result](https://img.shields.io/travis/Thor-x86/nullable)](https://travis-ci.org/Thor-x86/nullable)
@@ -38,7 +38,7 @@ Helps you convert every SQL [nullable](https://www.w3schools.com/sql/sql_null_va
 - uint32
 - uint64
 
-**WARNING:** PostgreSQL [won't support any form of unsigned integers](https://www.postgresql.org/message-id/CAEcSYX+Arn7y4FeYPp6ZgbiiiMfZYmsn9aUyotZB-MA1n5hTOw@mail.gmail.com). However, you still able to use any uint variants with a drawback: **they will be stored in form of raw binary instead of normal integer**. Thus, PostgreSQL-side uint comparation is impossible, you have to compare them in your Go application. MySQL and SQLite won't affected by this issue, don't worry.
+**WARNING:** PostgreSQL [won't support any form of unsigned integers](https://www.postgresql.org/message-id/CAEcSYX+Arn7y4FeYPp6ZgbiiiMfZYmsn9aUyotZB-MA1n5hTOw@mail.gmail.com). However, you still able to use any uint variants with a drawback: **they will be stored in form of raw binary instead of normal integer**. Thus, PostgreSQL-side uint comparation is impossible, you have to compare them in your Go application. MySQL, MariaDB, and SQLite won't affected by this issue, don't worry.
 
 # How to Use?
 
