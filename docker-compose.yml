@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: nullable_test_mysql
+    environment:
+      MYSQL_DATABASE: gorm
+      MYSQL_USER: gorm
+      MYSQL_PASSWORD: gorm
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - 3306:3306
+  mysql-legacy:
+    image: mysql:5.7
+    container_name: nullable_test_mysql_legacy
+    environment:
+      MYSQL_DATABASE: gorm
+      MYSQL_USER: gorm
+      MYSQL_PASSWORD: gorm
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - 3307:3306
+  mariadb:
+    image: mariadb:latest
+    container_name: nullable_test_mariadb
+    environment:
+      MYSQL_DATABASE: gorm
+      MYSQL_USER: gorm
+      MYSQL_PASSWORD: gorm
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - 3308:3306
+  postgres:
+    image: postgres:latest
+    container_name: nullable_test_postgres
+    environment:
+      POSTGRES_PASSWORD: gorm
+      POSTGRES_USER: gorm
+      POSTGRES_DB: gorm
+      TZ: Asia/Jakarta
+    ports:
+      - 5432:5432
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql:z
+
+  ### Uncomment this to test Microsoft SQL Server
+  # mssql:
+  #   image: mcmoe/mssqldocker:latest
+  #   container_name: nullable_test_mssql
+  #   environment:
+  #     ACCEPT_EULA: Y
+  #     SA_PASSWORD: LoremIpsum86
+  #     MSSQL_DB: gorm
+  #     MSSQL_USER: gorm
+  #     MSSQL_PASSWORD: LoremIpsum86
+  #   ports:
+  #     - 9930:1433
