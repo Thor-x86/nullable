@@ -9,3 +9,7 @@
 # Generated file at Windows XP
 Thumbs.db
 **/Thumbs.db
+
+# Coverage logs
+coverage.txt
+profile.out
