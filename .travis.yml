@@ -18,4 +18,5 @@ script:
   - ./test_all.sh
 
 after_script:
+  - bash <(curl -s https://codecov.io/bash) # This reports to codecov.io
   - docker-compose down
