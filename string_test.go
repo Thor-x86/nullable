@@ -75,6 +75,25 @@ func TestSetString(t *testing.T) {
 	tests.AssertEqual(t, nullableString.Get(), nil)
 }
 
+func TestJSONString(t *testing.T) {
+	basicString1 := ""
+	marshalUnmarshalJSON(t, nullable.NewString(&basicString1))
+
+	basicString2 := "This is a test string"
+	marshalUnmarshalJSON(t, nullable.NewString(&basicString2))
+
+	basicString3 := "and This is also a test string that really really long, just in case something fails after somebody enter a really long string like this. You know what? Coding unit test is a lot stressful and spend longer time than making the real code itself. So please show me a little respect of writting this really long string. Thank you!"
+	marshalUnmarshalJSON(t, nullable.NewString(&basicString3))
+
+	basicString4 := "~!@#$%^&*()_+`-=:;\"'/\\"
+	marshalUnmarshalJSON(t, nullable.NewString(&basicString4))
+
+	basicString5 := ""
+	marshalUnmarshalJSON(t, nullable.NewString(&basicString5))
+
+	marshalUnmarshalJSON(t, nullable.NewString(nil))
+}
+
 func TestString(t *testing.T) {
 	type TestNullableString struct {
 		ID          uint

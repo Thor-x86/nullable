@@ -44,6 +44,13 @@ func TestSetTime(t *testing.T) {
 	tests.AssertEqual(t, nullableTime.Get(), nil)
 }
 
+func TestJSONTime(t *testing.T) {
+	basicTime := time.Now()
+	marshalUnmarshalJSON(t, nullable.NewTime(&basicTime))
+
+	marshalUnmarshalJSON(t, nullable.NewTime(nil))
+}
+
 func TestTime(t *testing.T) {
 	type TestNullableTime struct {
 		UserID     uint `gorm:"primaryKey"`
