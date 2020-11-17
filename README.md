@@ -3,8 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Thor-x86/nullable/blob/master/LICENSE)
 [![Open Issues](https://img.shields.io/github/issues-raw/Thor-x86/nullable)](https://github.com/Thor-x86/nullable/issues)
 [![Open Pull Request](https://img.shields.io/github/issues-pr-raw/Thor-x86/nullable)](https://github.com/Thor-x86/nullable/pulls)
-[![Unit Test Result](https://img.shields.io/travis/Thor-x86/nullable)](https://travis-ci.org/Thor-x86/nullable)
-[![Unit Test Coverage](https://img.shields.io/codecov/c/github/Thor-x86/nullable?token=41e528f35dbe410eb642eeb4c4d3a9e1)](https://codecov.io/github/Thor-x86/nullable)
+[![Unit Test Result](https://travis-ci.org/Thor-x86/nullable.svg?branch=master)](https://travis-ci.org/Thor-x86/nullable)
+[![Unit Test Coverage](https://codecov.io/gh/Thor-x86/nullable/branch/master/graph/badge.svg)](https://codecov.io/gh/Thor-x86/nullable)
 
 Helps you convert every SQL [nullable](https://www.w3schools.com/sql/sql_null_values.asp) data types into Golang's supported types. So you don't have to create your own [scanner](https://www.geeksforgeeks.org/fmt-scan-function-in-golang-with-examples/) and [valuer](https://documentation.help/Golang/database_sql_drive.htm#Valuer) only for.. let's say... `BIGINT UNSIGNED NULL`
 
