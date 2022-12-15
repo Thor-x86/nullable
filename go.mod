@@ -1,4 +1,4 @@
-module github.com/Thor-x86/nullable
+module github.com/tee8z/nullable
 
 go 1.15
 
