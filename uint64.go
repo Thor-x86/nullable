@@ -145,7 +145,7 @@ func (Uint64) GormDBDataType(db *gorm.DB, field *schema.Field) string {
 	case "sqlite", "mysql":
 		return "BIGINT UNSIGNED"
 	case "postgres":
-		return "bytea"
+		return "numeric"
 	}
 	return ""
 }
