@@ -14,25 +14,13 @@ func TestScanUint32(t *testing.T) {
 	nullableInt.Scan(37)
 	tests.AssertEqual(t, nullableInt.Get(), 37)
 
-	// raw binary of uint8
-	nullableInt.Scan("00000000000000000000000000010001")
-	tests.AssertEqual(t, nullableInt.Get(), 17)
-
 	// uint16
 	nullableInt.Scan(1234)
 	tests.AssertEqual(t, nullableInt.Get(), 1234)
 
-	// raw binary of uint16
-	nullableInt.Scan("00000000000000000001000011100001")
-	tests.AssertEqual(t, nullableInt.Get(), 4321)
-
 	// uint32
 	nullableInt.Scan(654321)
 	tests.AssertEqual(t, nullableInt.Get(), 654321)
-
-	// raw binary of uint32
-	nullableInt.Scan("00000000000001011010101000100010")
-	tests.AssertEqual(t, nullableInt.Get(), 371234)
 
 	nullableInt.Scan(nil)
 	tests.AssertEqual(t, nullableInt.Get(), nil)
