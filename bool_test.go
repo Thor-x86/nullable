@@ -5,7 +5,7 @@ import (
 
 	"gorm.io/gorm/utils/tests"
 
-	"github.com/Thor-x86/nullable"
+	"github.com/tee8z/nullable"
 )
 
 func TestScanBool(t *testing.T) {

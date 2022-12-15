@@ -1,10 +1,10 @@
 # Nullable SQL Data Types for Golang (GO)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Thor-x86/nullable/blob/master/LICENSE)
-[![Open Issues](https://img.shields.io/github/issues-raw/Thor-x86/nullable)](https://github.com/Thor-x86/nullable/issues)
-[![Open Pull Request](https://img.shields.io/github/issues-pr-raw/Thor-x86/nullable)](https://github.com/Thor-x86/nullable/pulls)
-[![Unit Test Result](https://travis-ci.org/Thor-x86/nullable.svg?branch=master)](https://travis-ci.org/Thor-x86/nullable)
-[![Unit Test Coverage](https://codecov.io/gh/Thor-x86/nullable/branch/master/graph/badge.svg)](https://codecov.io/gh/Thor-x86/nullable)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/tee8z/nullable/blob/master/LICENSE)
+[![Open Issues](https://img.shields.io/github/issues-raw/tee8z/nullable)](https://github.com/tee8z/nullable/issues)
+[![Open Pull Request](https://img.shields.io/github/issues-pr-raw/tee8z/nullable)](https://github.com/tee8z/nullable/pulls)
+[![Unit Test Result](https://travis-ci.org/tee8z/nullable.svg?branch=master)](https://travis-ci.org/tee8z/nullable)
+[![Unit Test Coverage](https://codecov.io/gh/tee8z/nullable/branch/master/graph/badge.svg)](https://codecov.io/gh/tee8z/nullable)
 
 Helps you convert every SQL [nullable](https://www.w3schools.com/sql/sql_null_values.asp) data types into Golang's supported types. So you don't have to create your own [scanner](https://www.geeksforgeeks.org/fmt-scan-function-in-golang-with-examples/) and [valuer](https://documentation.help/Golang/database_sql_drive.htm#Valuer) only for.. let's say... `BIGINT UNSIGNED NULL`
 
@@ -45,7 +45,7 @@ Helps you convert every SQL [nullable](https://www.w3schools.com/sql/sql_null_va
 Very easy! first of all, let's install like normal Go packages
 
 ```bash
-go get github.com/Thor-x86/nullable
+go get github.com/tee8z/nullable
 ```
 
 ## Create a new variable
@@ -56,7 +56,7 @@ Remember, all you need to have is a basic variable and a nullable variable creat
 import (
     "fmt"
     "gorm.io/gorm"
-    "github.com/Thor-x86/nullable"
+    "github.com/tee8z/nullable"
 )
 
 func main() {
@@ -81,7 +81,7 @@ You'll use `.Set(&anotherBasicVar)` to change existing variable. Example:
 import (
     "fmt"
     "gorm.io/gorm"
-    "github.com/Thor-x86/nullable"
+    "github.com/tee8z/nullable"
 )
 
 func main() {
@@ -107,7 +107,7 @@ Also another example for uint64:
 import (
     "fmt"
     "gorm.io/gorm"
-    "github.com/Thor-x86/nullable"
+    "github.com/tee8z/nullable"
 )
 
 func main() {
@@ -135,7 +135,7 @@ If you thinking it's not really convenient to create a basic variable first, the
 import (
     "fmt"
     "gorm.io/gorm"
-    "github.com/Thor-x86/nullable"
+    "github.com/tee8z/nullable"
 )
 
 func main() {
@@ -191,4 +191,4 @@ Q: I found security issue, can I open issue for this?
 A: Please don't. You risking another users' security. Email me instead at athaariqa@gmail.com
 
 Q: This FAQ section didn't answer my problem.
-A: Feel free to [find issue](https://github.com/Thor-x86/nullable/issues) regarding the problem. If you found nothing, you are allowed to open a new issue.
+A: Feel free to [find issue](https://github.com/tee8z/nullable/issues) regarding the problem. If you found nothing, you are allowed to open a new issue.

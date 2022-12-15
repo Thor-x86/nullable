@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Thor-x86/nullable"
+	"github.com/tee8z/nullable"
 	"gorm.io/gorm/utils/tests"
 )
 
