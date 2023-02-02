@@ -3,6 +3,7 @@ package nullable
 import (
 	"database/sql/driver"
 	"encoding/json"
+	"fmt"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
@@ -22,8 +23,10 @@ func NewString(value *string) String {
 			isValid:   false,
 		}
 	}
+	// ensures we always get valid utf8 strings
+	utf8Safe := fmt.Sprintf("%q", *value)
 	return String{
-		realValue: *value,
+		realValue: utf8Safe,
 		isValid:   true,
 	}
 }

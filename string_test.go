@@ -2,10 +2,29 @@ package nullable_test
 
 import (
 	"testing"
+	"unicode/utf8"
 
 	"github.com/tee8z/nullable"
 	"gorm.io/gorm/utils/tests"
 )
+
+func TestNonUTF8SafeString(t *testing.T) {
+	// use a regular utf8 valid string
+	utf8String := "meow i am a cat"
+	isValid := utf8.Valid([]byte(utf8String))
+	tests.AssertEqual(t, isValid, true)
+	nullableString := nullable.NewString(&utf8String)
+	isValid = utf8.Valid([]byte(*nullableString.Get()))
+	tests.AssertEqual(t, isValid, true)
+
+	// pass in a non utf8 valid string, ensure we get out a valid utf8 string
+	notUtf8string := "\x17\x87\x1c\x97\xbbs\x159X\xad\xb0[\xca\xe0O\x0b2\xad\xe5\xa3lp\x9b.\xfe\x8eݘ\x15\xfe\xb5Q"
+	isValid = utf8.Valid([]byte(notUtf8string))
+	tests.AssertEqual(t, isValid, false)
+	nullableString = nullable.NewString(&notUtf8string)
+	isValid = utf8.Valid([]byte(*nullableString.Get()))
+	tests.AssertEqual(t, isValid, true)
+}
 
 func TestScanString(t *testing.T) {
 	nullableString := nullable.NewString(nil)
